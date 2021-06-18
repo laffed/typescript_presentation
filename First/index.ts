@@ -1,7 +1,7 @@
 //The basics
 
 // 1. type inference
-const my_unspecific_var = 600;
+let my_unspecific_var = 600;
 my_unspecific_var = "typescript, save me from being a dumb🐴";
 
 
@@ -27,7 +27,7 @@ type MyAwesomeObj = {
 
 
 // 3a. Functions
-type FuncVar = (number) => boolean;
+type FuncVar = (_: number) => boolean;
 
 function outerFunc(func: FuncVar): string {
 	return func(5) ? "five ain't the one" : "lucky day!";
@@ -45,17 +45,17 @@ const x = '29';
 const y = '522';
 let myNumber = 700;
 
-function addToString(a: number, b: number): string {
+function addTwoNumbers(a: number, b: number): string {
 	return `${a + b}`;
 }
 
-addToString(x, y); //an example of previous you & TS helping future you out
+addTwoNumbers(x, y); //an example of previous you & TS helping future you out
 
-myNumber = addToString(58, 10); //mutability of types for variables is not allowed, well, because you should never do this
+myNumber = addTwoNumbers(58, 10); //mutability of types for variables is not allowed, well, because you should never do this
 
 //if you set a type for a var that you're defining from non-hardcoded values,
 //TS will save you from making mistakes like this:
-const myOtherNumber: number = addToString(40, 19) * 2;
+const myOtherNumber: number = addTwoNumbers(40, 19) * 2;
 
 
 // 3c. Functions cont.

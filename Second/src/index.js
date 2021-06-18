@@ -9,6 +9,7 @@ const user = 'typescript_lov3r_583';
 const usr = ['T', 'S', ',', 'l', 'u', 'v'];
 
 const strFromArr = user.join('');
+const arrFromStr = usr.split('');
 
 const S3 = new AWS.S3({
 	credentials: {
