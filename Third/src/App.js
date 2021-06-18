@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
 import FindPage from "./components/FindPage/FindPage";
+import CustomChart from "./components/Chart/CustomChart";
+import {data} from './assets/chartData';
 import "./App.css";
 
 function App() {
@@ -68,6 +70,7 @@ function App() {
       )}
     </div>
   );
+
 };
 
 export default App;
