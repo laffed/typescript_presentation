@@ -77,13 +77,23 @@ function myFunc(num: number): boolean {
 	}
 }
 
-//TODO figure out why this doesn't work
-// const a = [1, 2, 3];
-// const b = [1, 2, 3];
-// function compareArrs(x: number[], y: number[]): boolean {
-// 	if (x === y) {
-// 		return true;
-// 	} else {
-// 		return false;
-// 	}
-// }
+
+
+// 4. TS will make you a better JS developer over time
+const fetchMyData = async (): Promise<{success: boolean; msg: string}> => {
+	let x = 0;
+	for (let i = 0; i < 100000; i++) {
+		x += i;
+	}
+	return {success: true, msg: "fakeData"};
+}
+
+const handleFetch = async (): Promise<string> => {
+	const res = fetchMyData();
+
+	if (res.success) {
+		return `GOOD --- ${res.msg}`;
+	}
+	return `BAD --- ${res.msg}`
+}
+
